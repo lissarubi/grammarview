@@ -5,9 +5,15 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
+  "log"
 )
 
 func main() {
+
+  dir, errDir := os.Getwd()
+  if errDir != nil {
+    log.Fatal(errDir)
+  }
   file := os.Args[1]
   colorRed := "\033[31m"
   colorWhite := "\033[37m"
@@ -23,7 +29,7 @@ func main() {
 
   textSplited := strings.Split(text, "\n")
 
-  data, err = ioutil.ReadFile("dic/words.txt")
+  data, err = ioutil.ReadFile(dir + "dic/words.txt")
   if err != nil {
     fmt.Println("File reading error", err)
     return
