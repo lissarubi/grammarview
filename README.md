@@ -5,7 +5,7 @@ Grammar View é um programa que mostra erros ortográficos diretamente do seu te
 # Instalação
 
 Tenha a linguagem [Golang](https://golang.org/)
-e rode `go install https://github.com/edersonferreira/grammarview`
+e rode `go install github.com/edersonferreira/grammarview`
 
 # Uso
 
