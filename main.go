@@ -6,11 +6,12 @@ import (
 	"os"
 	"strings"
   "log"
+  "path/filepath"
 )
 
 func main() {
 
-  dir, errDir := os.Getwd()
+  packageDirectory, errDir := filepath.Abs(filepath.Dir(os.Args[0]))
   if errDir != nil {
     log.Fatal(errDir)
   }
@@ -29,7 +30,7 @@ func main() {
 
   textSplited := strings.Split(text, "\n")
 
-  data, err = ioutil.ReadFile(dir + "dic/words.txt")
+  data, err = ioutil.ReadFile(packageDirectory + "dic/words.txt")
   if err != nil {
     fmt.Println("File reading error", err)
     return
